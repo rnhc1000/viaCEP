@@ -38,13 +38,7 @@ The design is structured as shown:
 ## _Links_
 - Live Site URL: [https://notas.ferreiras.dev.br] 
 ## _Built with_
-- Semantic HTML5 markup 
-- CSS custom properties 
-- Flexbox 
-- CSS Grid 
-- Mobile 
-- first workflow 
-- Vanilla Javascript 
+![Top Languages Card](https://github-readme-stats.vercel.app/api/top-langs/?username=rnhc1000&layout=compact)
  ## _What I praticed_
 ```html
 <div class="form-control">
