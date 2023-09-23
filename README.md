@@ -1,27 +1,44 @@
 # viaCEP - Find your detailed address
 This is an app that allows you to get a detailed address information given a valid CEP code,
-(Valid only in Brazil) available at [https://notas.ferreiras.dev.br] The goal here is to learn how even a small app can take davantage of a desig pattern approach including services,
-models
-and controllers,
-thanks to Prof Nelio Alves
+(Valid only in Brazil), available at [https://notas.ferreiras.dev.br]. The goal here is to pratice even with a small appyou can take advantage of a design pattern approach including services, models and controllers, a 'mvc-like' approach for a single page app, influenced by @devsuperior 
 and its approach on how to design
-and develop software in a standardized approach.
-## Table of contents
--[Overview](#overview)
--[Screenshot](#screenshot)
--[Links](#links)
--[Builtwith](#built-with)
--[WhatIlearned](#what-i-learned)
--[Continueddevelopment](#continued-development)
--[Resources](#useful-resources)
--[Author](#author)
--[Acknowledgments](#acknowledgments)
-## Overview
-### Screenshot
-[./viaCEP.png]
-* ### Links
+and develop software in a systemic and design pattern approach.
+## _Table of contents_
+- [Overview](#overview)
+- [Screenshot](#screenshot)
+- [Links](#links)
+- [Built with](#built-with)
+- [What I learned](#what-i-learned)
+- [Continued development](#continued-development)
+- [Resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+## _Overview_
+The design is structured as shown:
+ app|
+    css|
+        button.css
+        modal.css
+        stye.css
+    js|
+        controllers|
+            form-controller.js
+            list-controller.js
+            modal-controller.js
+            page-controller.js
+        models|
+            address.js
+        services|
+                exceptions|
+                    request-exceptions
+                address-service.js
+                request-service.js
+
+## _Screenshot_
+[![](./viaCEP.png)](https://notas.ferreiras.dev.br)
+## _Links_
 - Live Site URL: [https://notas.ferreiras.dev.br] 
-## Built with
+## _Built with_
 - Semantic HTML5 markup 
 - CSS custom properties 
 - Flexbox 
@@ -29,7 +46,7 @@ and develop software in a standardized approach.
 - Mobile 
 - first workflow 
 - Vanilla Javascript 
- ## What I learned
+ ## _What I praticed_
 ```html
 <div class="form-control">
     <label for="number">Número</label>
@@ -64,12 +81,12 @@ function State() {
 }
 const state = new State();
 ``` 
-## Continued development
-Next step: To clone this project and use ReactJS 
-### Useful resources
+## _Continued development_
+- Next step: To clone this project and use ReactJS 
+### _Useful resources_
 - [https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_objects] Everything is an Object in JS.
 - [https://html-css-js.com/] Mandatory pit stop at this site.
-## Author
+## _Author_
 - Website - [https://ferreiras.dev.br] 
 ## Acknowledgments
-Prof Nelio Alves
+- @devsuperior
