@@ -1,8 +1,6 @@
 # viaCEP - Find your detailed address
 This is an app that allows you to get a detailed address information given a valid CEP code,
-(Valid only in Brazil), available at [https://notas.ferreiras.dev.br]. The goal here is to pratice even with a small appyou can take advantage of a design pattern approach including services, models and controllers, a 'mvc-like' approach for a single page app, influenced by @devsuperior 
-and its approach on how to design
-and develop software in a systemic and design pattern approach.
+(Valid only in Brazil), available at [https://notas.ferreiras.dev.br]. The goal here is to practice even with a single page app you can take advantage of a design pattern including services, models and controllers, something closer to MVC approach, influenced by @devsuperior, to fetch data from an API [https://viacep.com.br] and start dealing with states, objects, asynchronous events, catching exceptions, explore the css and hmlt intricacies and hot to get it ready for JavaScript orchestrate the UI/UX.
 ## _Table of contents_
 - [Overview](#overview)
 - [Screenshot](#screenshot)
@@ -15,24 +13,25 @@ and develop software in a systemic and design pattern approach.
 - [Acknowledgments](#acknowledgments)
 ## _Overview_
 The design is structured as shown:
- app|
-    css|
-        button.css
-        modal.css
-        stye.css
-    js|
-        controllers|
-            form-controller.js
-            list-controller.js
-            modal-controller.js
-            page-controller.js
-        models|
-            address.js
-        services|
-                exceptions|
-                    request-exceptions
-                address-service.js
-                request-service.js
+- app|
+    - css|
+        - button.css
+        - modal.css
+        - stye.css
+    - js|
+        - controllers|
+            - form-controller.js
+            - list-controller.js
+            - modal-controller.js
+            - page-controller.js
+        - models|
+            - address.js
+        - services|
+            - exceptions|
+                - request-exceptions
+            - address-service.js
+            - request-service.js
+- index.html
 
 ## _Screenshot_
 [![](./viaCEP.png)](https://notas.ferreiras.dev.br)
