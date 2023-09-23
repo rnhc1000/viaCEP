@@ -17,7 +17,7 @@ The design is structured as shown:
     - css|
         - button.css
         - modal.css
-        - stye.css
+        - style.css
     - js|
         - controllers|
             - form-controller.js
