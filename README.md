@@ -7,49 +7,65 @@ thanks to Prof Nelio Alves
 and its approach on how to design
 and develop software in a standardized approach.
 ## Table of contents
--[Overview](
-#overview)
--[Screenshot](
-#screenshot)
--[Links](
-#links)
--[Myprocess](
-#my-process)
--[Builtwith](
-#built-with)
--[WhatIlearned](
-#what-i-learned)
--[Continueddevelopment](
-#continued-development)
--[Usefulresources](
-#useful-resources)
--[Author]
-(#author)
--[Acknowledgments](
-#acknowledgments)
+-[Overview](#overview)
+-[Screenshot](#screenshot)
+-[Links](#links)
+-[Builtwith](#built-with)
+-[WhatIlearned](#what-i-learned)
+-[Continueddevelopment](#continued-development)
+-[Resources](#useful-resources)
+-[Author](#author)
+-[Acknowledgments](#acknowledgments)
 ## Overview
 ### Screenshot
 [./viaCEP.png]
 * ### Links
 - Live Site URL: [https://notas.ferreiras.dev.br] 
-## My process
- ### Built with
-- Semantic HTML5 markup - CSS custom properties - Flexbox - CSS Grid - Mobile - first workflow - Vanilla Javascript ### What I learned
+## Built with
+- Semantic HTML5 markup 
+- CSS custom properties 
+- Flexbox 
+- CSS Grid 
+- Mobile 
+- first workflow 
+- Vanilla Javascript 
+ ## What I learned
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="form-control">
+    <label for="number">Número</label>
+    <input type="text" name="number" id="number" class="form-input" placeholder="Número">
+    <div class="error-message" data-error="number"></div>
+</div>
 ``` 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+ :root {
+    --main-white: #f0f0f0;
+    --main-red: #be3144;
+    --main-blue: #45567d;
+    --main-gray: #303841;
+    --main-orange: #FF8400;
+    --main-card: #3d3d3d;
+    --orangered: rgb(255, 69, 0);
+    --background-hr: #ebb653;
+    --error-message: #faa;
 }
 ``` 
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+function State() {
+  this.address = new Address();
+  this.btnSave = null;
+  this.btnClear = null;
+  this.inputCep = null;
+  this.inputStreet = null;
+  this.inputNumber = null;
+  this.inputCity = null;
+  this.errorCep = null;
+  this.errorNumber = null;
 }
+const state = new State();
 ``` 
-### Continued development
-Clone this project and use ReactJS 
+## Continued development
+Next step: To clone this project and use ReactJS 
 ### Useful resources
 - [https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_objects] Everything is an Object in JS.
 - [https://html-css-js.com/] Mandatory pit stop at this site.
