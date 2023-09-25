@@ -1,6 +1,6 @@
 # viaCEP - Find your detailed address
 This is an app that allows you to get a detailed address information given a valid CEP code,
-(Valid only in Brazil), available at [https://notas.ferreiras.dev.br]. The goal here is to practice even with a single page app you can take advantage of a design pattern including services, models and controllers, something closer to MVC approach, influenced by @devsuperior, to fetch data from an API [https://viacep.com.br] and start dealing with states, objects, asynchronous events, catching exceptions, explore the css and hmlt intricacies and hot to get it ready for JavaScript orchestrate the UI/UX.
+(Valid only in Brazil), available at [https://notas.ferreiras.dev.br]. The goal here is to dive into  software engineering best practices, even in a small project as a single page app, where you can take advantage of a design pattern that includes services, models and controllers with a close eye to SOLID principles, specially the SRP, heavily influenced by @devsuperior, to fetch data from an API [https://viacep.com.br] and start dealing with states, objects, asynchronous events, catching exceptions, exploring the css and html intricacies and prepare the app for JavaScript orchestrate the UI/UX without the usage of any framework.
 ## _Table of contents_
 - [Overview](#overview)
 - [Screenshot](#screenshot)
@@ -64,6 +64,13 @@ The design is structured as shown:
 }
 ``` 
 ```js
+export default function Address (cep, street, number, city) {
+        this.cep = cep;
+        this.street = street;
+        this.number = number;
+        this.city = city;
+}
+
 function State() {
   this.address = new Address();
   this.btnSave = null;
