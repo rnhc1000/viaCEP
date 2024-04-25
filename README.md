@@ -1,16 +1,18 @@
 # viaCEP - Find your detailed address
-This is an app that allows you to get a detailed address information given a valid CEP code,
-(Valid only in Brazil), available at [https://notas.ferreiras.dev.br]. The goal here is to dive into  software engineering best practices, even in a small project as a single page app, where you can take advantage of a design pattern that includes services, models and controllers with a close eye to SOLID principles, specially the SRP, heavily influenced by @devsuperior, to fetch data from an API [https://viacep.com.br] and start dealing with states, objects, asynchronous events, catching exceptions, exploring the css and html intricacies and prepare the app for JavaScript orchestrate the UI/UX without the usage of any framework.
+This is an app that allows you to get a detailed address information given a valid ZIP code,
+(Valid only in Brazil), available at [https://apicep.ferreiras.dev.br]. The goal here is to dive into  software engineering best practices, even in a small project as a single page app, where you can take advantage of a design pattern that includes services, models and controllers with a close eye to SOLID principles, specially the SRP, heavily influenced by @devsuperior, to fetch data from an API [https://viacep.com.br] and start dealing with states, objects, asynchronous events, catching exceptions, exploring the css and html intricacies and prepare the app for JavaScript orchestrate the UI/UX without the usage of any framework.
 ## _Table of contents_
-- [Overview](#overview)
-- [Screenshot](#screenshot)
-- [Links](#links)
-- [Built with](#built-with)
-- [What I practiced](#what-i-practiced)
-- [Continued development](#continued-development)
-- [Resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [viaCEP - Find your detailed address](#viacep---find-your-detailed-address)
+  - [_Table of contents_](#table-of-contents)
+  - [_Overview_](#overview)
+  - [_Screenshot_](#screenshot)
+  - [_Links_](#links)
+  - [_Built with_](#built-with)
+  - [_What I practiced_](#what-i-practiced)
+  - [_Continued development_](#continued-development)
+    - [_Useful resources_](#useful-resources)
+  - [_Author_](#author)
+  - [Acknowledgments](#acknowledgments)
 ## _Overview_
 The design is structured as shown:
 - app|
@@ -34,9 +36,9 @@ The design is structured as shown:
 - index.html
 
 ## _Screenshot_
-[![](./viaCEP.png)](https://notas.ferreiras.dev.br)
+[![](./viaCEP.png)](https://apicep.ferreiras.dev.br)
 ## _Links_
-- Live Site URL: [https://notas.ferreiras.dev.br] 
+- Live Site URL: [https://apicep.ferreiras.dev.br] 
 ## _Built with_
 | VS Code | Git | CSS3 | HTML5 | CentOS | JavaScript |
 |----------|----------|----------|----------|----------|----------|
