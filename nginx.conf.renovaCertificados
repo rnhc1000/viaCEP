@@ -1,0 +1,200 @@
+worker_processes     2;
+worker_priority      15;
+worker_rlimit_core  500M;
+working_directory   /var/log/cores/;
+events {
+	worker_connections 512;
+	accept_mutex        on;
+}
+http {
+ 	server_names_hash_bucket_size 	64;
+  	client_body_buffer_size  	512K;
+  	client_header_buffer_size 	2k;
+  	client_max_body_size 		512m;
+ 	large_client_header_buffers 	4 8k;
+   	client_body_timeout   		240s;
+   	client_header_timeout 		10s;
+   	keepalive_timeout     		3600s;
+   	send_timeout    		10s;
+ 	aio                       	on;
+  	charset                   	utf-8;
+  	default_type              	application/octet-stream;
+  	gzip                      	off;
+ 	gzip_http_version         	1.0;
+  	gzip_static               	on;
+ 	gzip_vary                 	on;
+  	gzip_proxied             	any;
+  	ignore_invalid_headers    	on;
+  	include                   	/etc/nginx/mime.types;
+  	keepalive_requests        	50;
+  	keepalive_disable         	none;
+  	max_ranges                	0;
+  	msie_padding              	off;
+  	open_file_cache           	max=1000 inactive=2h;
+  	open_file_cache_errors    	on;
+  	open_file_cache_min_uses  	1;
+  	open_file_cache_valid     	1h;
+  	output_buffers            	1 512;
+  	postpone_output           	1460;
+  	read_ahead                	512K;
+  	recursive_error_pages     	on;
+  	reset_timedout_connection 	on;
+  	sendfile                  	off;
+  	server_tokens             	off;
+  	server_name_in_redirect   	off;
+  	source_charset            	utf-8;
+  	tcp_nodelay               	on;
+  	tcp_nopush                	off;
+	underscores_in_headers 		on;
+  	log_format  			main  '$remote_addr $host $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" $ssl_cipher $request_time';
+  	proxy_max_temp_file_size    	0;
+  	proxy_connect_timeout      	900;
+  	proxy_send_timeout         	900;
+  	proxy_read_timeout         	900;
+  	proxy_buffer_size          	8k;
+  	proxy_buffers              	8 64k;
+  	proxy_busy_buffers_size    	128k;
+  	proxy_temp_file_write_size 	1024m;
+  	proxy_intercept_errors    	on;
+   	limit_req_zone  			$binary_remote_addr  zone=gulag:10m   rate=250r/m;
+	index 						index.php index.html index.htm;
+
+	server {
+		server_name     www.ferreiras.dev.br;
+		listen          3.19.135.188;
+		access_log      /var/log/nginx/access.log main buffer=32k;
+		access_log      /var/log/nginx/cache.log;
+		error_log       /var/log/nginx/error.log;
+		expires         1h;
+		limit_req       zone=gulag  burst=100 nodelay;
+		resolver        201.182.7.250 201.182.7.249 valid=3600s;
+		resolver_timeout 5s;
+		if ($request_method !~ ^(GET|HEAD|POST)$ ) {
+			return 403;
+		}
+		root /usr/share/nginx/html/ferreiras;
+		index index.php index.html index.htm;
+		location / {
+            try_files $uri $uri/ =404;
+		}
+		error_page 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 495 496 497 500 501 502 503 504 505 506 507 /errosSite/50x.html;
+	    error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+	}
+
+    server {
+                server_name     mx.ferreiras.dev.br;
+                listen          201.182.4.20;
+                listen          [2804:4260:FFFF:FFF0:0:faca:fada:20]:80;
+                access_log      /var/log/nginx/access.log main buffer=32k;
+                access_log      /var/log/nginx/cache.log;
+                error_log       /var/log/nginx/error.log;
+                expires         1h;
+                limit_req       zone=gulag  burst=100 nodelay;
+                resolver        201.182.7.250 201.182.7.249 valid=3600s;
+                resolver_timeout 5s;
+                if ($request_method !~ ^(GET|HEAD|POST)$ ) {
+                                                        return 403;
+                }
+                root /usr/share/nginx/html/mx;
+                index index.php index.html index.htm;
+                location / {
+                        try_files $uri $uri/ =404;
+                }
+                error_page 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 495 496 497 500 501 502 503 504 505 506 507 /errosSite/50x.html;
+                error_page   500 502 503 504  /50x.html;
+                location = /50x.html {
+                          root   html;
+                }
+        }
+
+        server {
+                server_name     ferreiras.dev.br;
+                listen          201.182.4.22;
+                listen          [2804:4260:FFFF:FFF0:0:faca:fada:22]:80;
+                access_log      /var/log/nginx/access.log main buffer=32k;
+                access_log      /var/log/nginx/cache.log;
+                error_log       /var/log/nginx/error.log;
+                expires         1h;
+                limit_req       zone=gulag  burst=100 nodelay;
+                resolver        201.182.7.250 201.182.7.249 valid=3600s;
+                resolver_timeout 5s;
+                if ($request_method !~ ^(GET|HEAD|POST)$ ) {
+                                                        return 403;
+                }
+                root /usr/share/nginx/html/ferreiras;
+                index index.php index.html index.htm;
+                location / {
+                        try_files $uri $uri/ =404;
+                }
+                error_page 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 495 496 497 500 501 502 503 504 505 506 507 /errosSite/50x.html;
+                error_page   500 502 503 504  /50x.html;
+                location = /50x.html {
+                          root   html;
+                }
+        }
+
+	
+
+	server {
+		server_name     notas.ferreiras.dev.br;
+		listen          201.182.4.22;
+                listen          [2804:4260:FFFF:FFF0:0:faca:fada:22]:80;
+        	access_log      /var/log/nginx/access.log main buffer=32k;
+        	access_log      /var/log/nginx/cache.log;
+        	error_log       /var/log/nginx/error.log;
+        	expires         1h;
+        	limit_req       zone=gulag  burst=100 nodelay;
+        	resolver        201.182.7.250 201.182.7.249 valid=3600s;
+        	resolver_timeout 5s;
+
+        	if ($request_method !~ ^(GET|HEAD|POST)$ ) {
+                                                        return 403;
+        	}
+
+		location / {
+            	        root   /usr/share/nginx/html/tarefas;
+                        index  index.html index.htm;
+                }
+
+        	error_page 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 495 496 497 500 501 502 503 504 505 506 507 /errosSite/50x.html;
+		        error_page   500 502 503 504  /50x.html;
+        	location = /50x.html {
+            		root   html;
+        	}
+
+	}	
+
+	server {
+        	server_name     bloqueio.paktelecom.com.br;
+		listen          201.182.4.22;
+                listen          [2804:4260:FFFF:FFF0:0:faca:fada:22]:80;
+        	access_log      /var/log/nginx/access.log main buffer=32k;
+        	access_log      /var/log/nginx/cache.log;
+        	error_log       /var/log/nginx/error.log;
+        	expires         1h;
+        	limit_req       zone=gulag  burst=100 nodelay;
+        	resolver        201.182.7.250 201.182.7.249 valid=3600s;
+        	resolver_timeout 5s;
+
+        	if ($request_method !~ ^(GET|HEAD|POST)$ ) {
+                                                        return 403;
+        	}
+
+		location / {
+            	        root   /usr/share/nginx/html/bloqueio;
+                        index  index.html index.htm;
+                }
+
+        	error_page 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 495 496 497 500 501 502 503 504 505 506 507 /errosSite/50x.html;
+		        error_page   500 502 503 504  /50x.html;
+        	location = /50x.html {
+            		root   html;
+        	}
+
+	}	
+
+
+} # --- Fim do Arquivo de Configuracao NGINX.CONF
