@@ -25,14 +25,12 @@
  html, body  {
     font-size: 20px;
     background: linear-gradient(115deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url(../img/henry-perks-bjxaxq1l7di-unsplash.webp), no-repeat;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-size: cover;
-
  }
 
  .nav-container {
     height: 80px;
-    max-width: 960px;
     width: 100%;
     background-color: var(--main-orange);
     padding: 0 20px 0 20px;
@@ -98,11 +96,11 @@
  }
 
  .form-input::placeholder {
-    color: #c9c9c9;
+    color: #161515;
  }
 
  .form-input.disabled {
-    background-color: #ddd;
+    background-color: #d6d6d6;
  }
 
 
