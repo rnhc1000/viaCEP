@@ -40,9 +40,8 @@ The design is structured as shown:
 ## _Links_
 - Live Site URL: [https://apicep.ferreiras.dev.br] 
 ## _Built with_
-| VS Code | Git | CSS3 | HTML5 | CentOS | JavaScript |
-|----------|----------|----------|----------|----------|----------|
-![](https://ferreiras.dev.br/assets/images/icons/icons8-visual-studio-code.svg)  | ![](https://ferreiras.dev.br/assets/images/icons/git-scm-icon.svg) | ![](https://ferreiras.dev.br/assets/images/icons/css3-original-wordmark.svg) | ![](https://ferreiras.dev.br/assets/images/icons/html5-original-wordmark.svg) | ![](https://ferreiras.dev.br/assets/images/icons/linux-original.svg) | ![](https://ferreiras.dev.br/assets/images/icons/icons8-javascript.svg) |
+[![My Skills](https://skillicons.dev/icons?i=vscode,git,css,html,javascript,docker,redhat,nginx,aws)](https://skillicons.dev)
+
 
  ## _What I practiced_
 ```html
